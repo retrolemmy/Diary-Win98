@@ -1,0 +1,101 @@
+#include <windows.h>
+#include "resource.h"
+
+IDI_DIARY ICON "build/Diary.ico"
+
+IDR_MENU MENU
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Save\tCtrl+S",           IDM_SAVE
+        MENUITEM SEPARATOR
+        MENUITEM "Diary Se&rver...",        IDM_SERVER
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                   IDM_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo\tCtrl+Z",           IDM_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t\tCtrl+X",            IDM_CUT
+        MENUITEM "&Copy\tCtrl+C",           IDM_COPY
+        MENUITEM "&Paste\tCtrl+V",          IDM_PASTE
+        MENUITEM "Select &All\tCtrl+A",     IDM_SELECTALL
+        MENUITEM SEPARATOR
+        MENUITEM "&Find...\tCtrl+F",        IDM_FIND
+        MENUITEM "Find &Next\tF3",          IDM_FINDNEXT
+        MENUITEM "&Show All Entries",       IDM_SHOWALL
+    END
+    POPUP "&Go"
+    BEGIN
+        MENUITEM "&Previous Day\tCtrl+PgUp", IDM_PREVDAY
+        MENUITEM "&Next Day\tCtrl+PgDn",    IDM_NEXTDAY
+        MENUITEM "&Today\tCtrl+T",          IDM_TODAY
+    END
+    POPUP "F&ormat"
+    BEGIN
+        MENUITEM "&Font...",                IDM_FONT
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About Diary",            IDM_ABOUT
+    END
+END
+
+IDR_ACCEL ACCELERATORS
+BEGIN
+    "S",        IDM_SAVE,       VIRTKEY, CONTROL
+    "A",        IDM_SELECTALL,  VIRTKEY, CONTROL
+    "F",        IDM_FIND,       VIRTKEY, CONTROL
+    VK_F3,      IDM_FINDNEXT,   VIRTKEY
+    VK_PRIOR,   IDM_PREVDAY,    VIRTKEY, CONTROL
+    VK_NEXT,    IDM_NEXTDAY,    VIRTKEY, CONTROL
+    "T",        IDM_TODAY,      VIRTKEY, CONTROL
+END
+
+IDD_FIND DIALOG 0, 0, 220, 62
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Find"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Find entries containing:", -1, 7, 7, 206, 8
+    EDITTEXT        IDC_FINDTEXT, 7, 18, 206, 14, ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "Find", IDOK, 109, 41, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 163, 41, 50, 14
+END
+
+IDD_SERVER DIALOG 0, 0, 240, 110
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Diary Server"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Keep the entries on a Diary Server at this address (host or host:port; leave it empty for the ""Diary Entries"" folder):", -1, 7, 7, 226, 26
+    EDITTEXT        IDC_ADDRESS, 7, 34, 226, 14, ES_AUTOHSCROLL
+    LTEXT           "The server's key (leave it empty if it has none):", -1, 7, 55, 226, 8
+    EDITTEXT        IDC_KEY, 7, 66, 226, 14, ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK", IDOK, 129, 89, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 183, 89, 50, 14
+END
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION     1, 0, 0, 0
+PRODUCTVERSION  1, 0, 0, 0
+FILEOS          VOS__WINDOWS32
+FILETYPE        VFT_APP
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904E4"
+        BEGIN
+            VALUE "FileDescription", "Diary"
+            VALUE "FileVersion", "1.0"
+            VALUE "LegalCopyright", "No rights reserved (CC0)"
+            VALUE "ProductName", "Diary"
+            VALUE "ProductVersion", "1.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
