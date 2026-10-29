@@ -3,7 +3,8 @@
 A simple one-page-per-day journal for Windows 98, which also runs on
 Windows 11 (and should run on Windows 95 with Internet Explorer 4, ME, 2000,
 XP and later too). It's the sibling of the
-[classic Mac OS](https://github.com/retrolemmy/Diary),
+[classic Mac OS](https://github.com/retrolemmy/Diary) (68k Macs, and PowerPC
+Macs up to a G4 with Mac OS 9.2.2),
 [AmigaOS 3.2](https://github.com/retrolemmy/Diary-Amiga) and
 [Mac OS X](https://github.com/retrolemmy/Diary-MacOSX) versions, and like
 them it can keep its entries on a
