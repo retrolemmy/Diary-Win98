@@ -43,6 +43,16 @@ next to the program, and Windows doesn't let programs write there. As the
 program isn't signed, SmartScreen may warn about it on the first start
 ("More info", then "Run anyway").
 
+## Diary Server
+
+To share the entries between your computers, run
+[Diary Server](https://github.com/retrolemmy/Diary-Server) on a machine in
+your network, such as a RetroNAS or any small Linux box with Python 3.9 or
+later: download `diary_server.py` from its
+[latest release](https://github.com/retrolemmy/Diary-Server/releases/latest)
+and start it as its README describes. Diary works with Diary Server 1.0 or
+later. The same server also gives modern browsers a Diary web page.
+
 ## Building
 
 On Linux, with the [MinGW-w64](https://www.mingw-w64.org) cross-compiler
