@@ -1,7 +1,8 @@
 # Diary for Windows 98
 
-A simple one-page-per-day journal for Windows 98 (it should also run on
-Windows 95 with Internet Explorer 4, ME, 2000 and XP). It's the sibling of the
+A simple one-page-per-day journal for Windows 98, which also runs on
+Windows 11 (and should run on Windows 95 with Internet Explorer 4, ME, 2000,
+XP and later too). It's the sibling of the
 [classic Mac OS](https://github.com/retrolemmy/Diary),
 [AmigaOS 3.2](https://github.com/retrolemmy/Diary-Amiga) and
 [Mac OS X](https://github.com/retrolemmy/Diary-MacOSX) versions, and like
@@ -35,6 +36,12 @@ computers share one diary.
 Diary is a single `Diary.exe` with nothing to install. It needs the month
 calendar that comes with Windows 98 (Windows 95 gets it with Internet
 Explorer 4 or later); without it, Diary says so instead of failing.
+
+On Windows 11, keep Diary in a folder of your own (in Documents, say)
+rather than in `C:\Program Files`: Diary keeps its entries and settings
+next to the program, and Windows doesn't let programs write there. As the
+program isn't signed, SmartScreen may warn about it on the first start
+("More info", then "Run anyway").
 
 ## Building
 
